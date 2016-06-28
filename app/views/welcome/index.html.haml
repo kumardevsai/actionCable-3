@@ -1,6 +1,7 @@
 %h1 Hello
 
 %form
-  =text_field_tag "message","", :id => "my_message", :class => "my_message_class"
+  =text_field_tag "message","", id: "my_message", class:   "my_message_class"
   %p
-  =submit_tag "Send", :id => "send_message"
+  =my_button_tag "Send", id: "send_message", remote: true
+

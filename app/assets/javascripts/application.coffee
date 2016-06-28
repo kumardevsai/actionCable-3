@@ -17,7 +17,7 @@
 
 $(document).ready ->
   $('#send_message').click ->
-    App.for_all_user.send($('#my_message').val(),callback ->
-      $('.my_message_class').val('')
-    )
-    return false
+    App.chat.send_message($('#my_message').val())
+    $('.my_message_class').val('')
+
+
