@@ -14,6 +14,6 @@ $(document).ready ->
       else
         $('#user_field').append data['message']
 
-    send_message: (message) ->
-      @perform 'send_message', message: message
+    send_message: (data) ->
+      @perform 'send_message', message: data['message'], to_user_id: data['to_user_id']
 

@@ -17,7 +17,7 @@
 
 $(document).ready ->
   $('#send_message').click ->
-    App.chat.send_message($('#my_message').val())
+    App.chat.send_message(message: $('#my_message').val(), to_user_id: -1)
     $('.my_message_class').val('')
 
 

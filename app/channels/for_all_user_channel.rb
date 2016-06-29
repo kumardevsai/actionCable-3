@@ -14,6 +14,10 @@ class ForAllUserChannel < ApplicationCable::Channel
 
   def send_message(data)
     a= ApplicationController.render partial: 'welcome/message', locals: {message: data['message']}
-    ActionCable.server.broadcast "for_user_#{current_user.id}_channel", message: a,type: 'message'
+    if data['to_user_id'] == -1
+      ActionCable.server.broadcast "for_all_user_channel", message: a
+    else
+      ActionCable.server.broadcast "for_user_#{current_user.id}_channel", message: a,type: 'message'
+    end
   end
 end
